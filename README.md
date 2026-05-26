@@ -1,6 +1,6 @@
 # Yehor Kaliberda 🇩🇰
-**AI Systems Architect & Founder**
-📍 Aarhus, Denmark
+**AI Systems Architect & Founder** <br>
+📍 Aarhus, Denmark <br>
 **Focus:** Autonomous Multi-Agent Infrastructure, Semantic Codebase Evolution, Voice AI Ecosystems
 
 ---
