@@ -1,33 +1,80 @@
 # Yehor Kaliberda 🇩🇰
-**AI Systems Architect & Founder** <br>
-📍 Aarhus, Denmark <br>
-**Focus:** Autonomous Multi-Agent Infrastructure, Semantic Codebase Evolution, Voice AI Ecosystems
+
+**AI Systems Architect & Founder** · Aarhus, Denmark
+
+I build autonomous engineering agents that treat codebases as semantic graphs — and ship the results as verified, reviewable Pull Requests.
 
 ---
 
-### 🧠 How I Think About Code
-I treat codebases as living semantic graphs, not just flat text files. Every import is an edge, every function call is a relationship. When we refactor something, we're really mutating a graph—not just blindly running diffs against bytes. 
+## Products
 
-I design autonomous systems based on this exact idea. The goal is to build self-governing agents that can solve complex engineering problems without needing constant human intervention.
+### [Symbiote](https://callmedai.com) — Autonomous Type Annotation Engine
 
-### 🛠 What I'm Building
+Symbiote maps a Python repository into a typed AST dependency graph and runs a multi-agent Mirror Pass that writes PEP 484 annotations under collision-free file locks. Delivers a single reviewable PR with **0 pyright errors confirmed** before it leaves the system.
 
-#### 1. Symbiote Core Engine
-I built this engine to let multiple AI agents safely edit the same codebase at the same time. The core challenge wasn't just getting the agents to write code, but keeping them from stepping on each other's toes.
-* **AST Mapping:** Instead of letting agents guess where things are, the system uses custom tree-sitter pipelines to parse the whole repository into a structural NetworkX graph.
-* **Governed Concurrency:** I wrote a persistent control layer that checks the exact blast radius of every write operation. If two agents try to mutate the same space, the system mechanically blocks the collision.
-* **Auditing:** Every single agent action is logged with nanosecond precision so we can actually trace what happened and guarantee the execution was clean.
-* **Safety Boundaries:** Left to their own devices, agents will eventually corrupt a codebase. I enforce a strict Perception → Reasoning → Action loop, locked down by Pydantic schemas, to prevent structural decay.
+**Architecture highlights**
 
-#### 2. CallMed AI
-An AI voice receptionist platform built for medical clinics and med spas.
-* Handles inbound workflow routing, patient triage, and automated scheduling.
-* The backend is complex, but the user experience is intentionally stripped down. We went with a clean, Nordic minimal design. In healthcare, trust is everything, and an overly flashy or complicated interface just feels risky.
+| Component | What it does |
+|---|---|
+| AST graph (tree-sitter + NetworkX) | Structural map of every import edge and call relationship |
+| Bouncer lock layer | Computes exact blast radius before any write; blocks concurrent collisions mechanically |
+| Nanosecond audit trail | Every agent action logged — full trace, reproducible execution |
+| Pydantic schema gates | Perception → Reasoning → Action loop; prevents structural drift |
 
-### 📈 Testing in the wild
-It's one thing to build an autonomous architecture; it's another to let it loose. I actively test my systems against real-world, production-grade open-source environments to see if they hold up.
-* **Automated Refactoring:** I've been running headless agents to push automated type-hint saturation and PEP 484 compliance across branches.
-* **Strict Guardrails:** The agents are calibrated to strictly respect PEP 8 spacing and docstring rules, ensuring the output actually looks like human-written code rather than an algorithmic dump.
+**Stack:** Python 3.12 · tree-sitter · NetworkX · Anthropic Claude · Pydantic
 
-### 📬 Connect
-* **LinkedIn:** [in/yehorkaliberda](https://www.linkedin.com/in/yehorkaliberda/)
+---
+
+### [RepoMend](https://callmedai.com) — Autonomous Security Fix Pipeline
+
+RepoMend scans, triages, fixes, and verifies security vulnerabilities — entirely on-premise. One command from raw codebase to draft PR.
+
+```
+uv tool install repomend
+repomend scan /path/to/repo
+repomend fix
+```
+
+**Pipeline**
+
+| Stage | Detail |
+|---|---|
+| Scan | Semgrep · Bandit · pip-audit · Trivy · ESLint → unified SARIF |
+| Triage | AI analyst scores severity, filters noise, ranks by exploitability |
+| Fix-Gen | Claude Sonnet generates minimal, surgical patches |
+| Verifier (3 gates) | Re-scan · diff bounds · test suite — all must pass before PR opens |
+
+Your code never leaves your infrastructure. The verifier is deterministic and auditable.
+
+**Stack:** Python 3.12 · Semgrep · Bandit · pip-audit · Trivy · Anthropic Claude · GitPython
+
+---
+
+## Track Record
+
+| Repository | Type | Result |
+|---|---|---|
+| [domainaware/checkdmarc](https://github.com/domainaware/checkdmarc) | Security fix (RepoMend) | PR merged — bare-except B110 |
+| aeon-timeseries/aeon | Type annotations (Symbiote) | PRs #235+ merged |
+| mpfb2 | Type annotations (Symbiote) | PRs #377, #378+ merged |
+
+**7 PRs merged** into production open-source repositories. All generated autonomously and verified before submission.
+
+---
+
+## How I Think About Code
+
+Every import is an edge. Every function call is a relationship. Refactoring is graph mutation — not diff application. The agents I build operate on this model: they reason about structure, not bytes.
+
+The practical consequence: agents that understand *why* two nodes are connected can make changes that are provably safe, not just syntactically valid.
+
+---
+
+## Connect
+
+| | |
+|---|---|
+| 🌐 Website | [callmedai.com](https://callmedai.com) |
+| 💼 LinkedIn | [linkedin.com/in/yehorkaliberda](https://www.linkedin.com/in/yehorkaliberda/) |
+| ✉️ Email | yehor@callmedai.com |
+| 🐦 X / Twitter | [@hnmaster_](https://x.com/hnmaster_) |
