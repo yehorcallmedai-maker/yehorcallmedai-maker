@@ -1,6 +1,6 @@
 Yehor Kaliberda 🇩🇰
 
-AI Systems Architect & Founder · Aarhus, Denmark
+AI Directive Engineering & Founder · Aarhus, Denmark
 
 I build autonomous engineering agents that treat codebases as semantic graphs — and ship the results as verified, reviewable Pull Requests.
 
@@ -82,9 +82,11 @@ PRs generated autonomously and verified before submission. Full run-by-run recor
 
 ## How I Think About Code
 
-Every import is an edge. Every function call is a relationship. Refactoring is graph mutation — not diff application. The agents I build operate on this model: they reason about structure, not bytes.
+Every import is an edge, and every function call is a relationship. Refactoring isn't just applying diffs—it's mutating a graph.
 
-The practical consequence: agents that understand why two nodes are connected can make changes that are provably safe, not just syntactically valid.
+That’s the whole premise behind the agents I build. They reason about underlying structure instead of endlessly reshuffling blind bytes, which is frankly more than I can say for most human stand-ups I’ve sat through.
+
+The practical payoff is simple: when an agent actually grasps why two nodes are connected, its changes become provably safe, not just syntactically valid.
 
 ## Connect
 
