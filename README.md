@@ -1,6 +1,6 @@
 Yehor Kaliberda 🇩🇰
 
-AI Directive Engineering & Founder · Aarhus, Denmark
+AI Directive Engineer & Founder · Aarhus, Denmark
 
 I build autonomous engineering agents that treat codebases as semantic graphs — and ship the results as verified, reviewable Pull Requests.
 
